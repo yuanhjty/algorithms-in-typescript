@@ -1,0 +1,56 @@
+{
+  "name": "algorithms-in-typescript",
+  "version": "0.0.1",
+  "description": "Algorithms and data structures in typescript language",
+  "scripts": {
+    "lint": "eslint ./ --ext .ts,.js",
+    "lint-fix": "eslint ./ --fix --ext .ts,.js",
+    "lint-staged": "lint-staged",
+    "tsc": "tsc",
+    "prettier": "prettier --write \"**/*.{js,ts,json}\"",
+    "test": "npm run lint-fix && npm run tsc && jest",
+    "compile": "babel ./src --out-dir ./build --extensions .ts,.js",
+    "build": "npm run test && npm run compile"
+  },
+  "lint-staged": {
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,ts}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "pre-commit": "npm run lint-staged"
+  },
+  "keywords": [
+    "algorithm",
+    "data structure",
+    "typescript"
+  ],
+  "author": "yuanhjty",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@types/jest": "^24.0.23",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.7.1",
+    "eslint-config-y-base": "^4.0.0",
+    "eslint-config-y-ts-base": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1",
+    "prettier-config-y-base": "^1.0.2",
+    "typescript": "^3.7.2"
+  }
+}
