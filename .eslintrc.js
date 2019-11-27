@@ -13,9 +13,7 @@ module.exports = {
       files: ['**/*.js'],
       extends: ['y-base'],
       rules: {
-        'func-names': 0,
         'comma-dangle': 0,
-        'no-console': 0,
       },
     },
   ],
