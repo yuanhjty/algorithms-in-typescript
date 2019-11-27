@@ -24,7 +24,9 @@
     ]
   },
   "husky": {
-    "pre-commit": "npm run lint-staged"
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
   },
   "keywords": [
     "algorithm",
