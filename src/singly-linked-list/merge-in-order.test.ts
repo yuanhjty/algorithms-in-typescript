@@ -9,7 +9,7 @@ describe('mergeInOrder', () => {
     const one = create(oneArr);
     const another = create(anotherArr);
     expect(values(mergeInOrder(one, another))).toEqual(
-      oneArr.concat(anotherArr).sort((a, b) => a - b)
+      oneArr.concat(anotherArr).sort((a, b) => a - b),
     );
   });
 
@@ -19,7 +19,7 @@ describe('mergeInOrder', () => {
     const one = create(oneArr);
     const another = create(anotherArr);
     expect(values(mergeInOrder(one, another))).toEqual(
-      oneArr.concat(anotherArr).sort((a, b) => a - b)
+      oneArr.concat(anotherArr).sort((a, b) => a - b),
     );
   });
 
@@ -29,7 +29,7 @@ describe('mergeInOrder', () => {
     const one = create(oneArr);
     const another = create(anotherArr);
     expect(values(mergeInOrder(one, another))).toEqual(
-      oneArr.concat(anotherArr).sort((a, b) => a - b)
+      oneArr.concat(anotherArr).sort((a, b) => a - b),
     );
   });
 
@@ -39,7 +39,7 @@ describe('mergeInOrder', () => {
     const one = create(oneArr);
     const another = create(anotherArr);
     expect(values(mergeInOrder(one, another))).toEqual(
-      oneArr.concat(anotherArr).sort((a, b) => a - b)
+      oneArr.concat(anotherArr).sort((a, b) => a - b),
     );
   });
 });

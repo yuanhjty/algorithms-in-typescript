@@ -46,13 +46,13 @@
     "babel-jest": "^24.9.0",
     "eslint": "^6.7.1",
     "eslint-config-y-base": "^4.0.0",
-    "eslint-config-y-ts-base": "^3.0.0",
+    "eslint-config-y-ts-base": "^4.0.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "prettier-config-y-base": "^1.0.2",
+    "prettier-config-y-base": "^2.0.0",
     "typescript": "^3.7.2"
   }
 }
