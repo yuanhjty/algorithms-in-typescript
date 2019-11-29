@@ -25,7 +25,7 @@ export default class Stack<T> {
   pop(): T | undefined {
     if (this.length > 0) {
       const tail = this.tail;
-      const tailPrev = findPrev(this.store, tail);
+      const tailPrev = findPrev(this.store, tail) as ListNode<T>;
       this.tail = tailPrev;
       this.tail.next = null;
       this.length -= 1;
