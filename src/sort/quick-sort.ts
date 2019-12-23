@@ -17,17 +17,17 @@ function partition<T>(
   items: T[],
   left: number,
   right: number,
-  operator: ComparisonOperator<T>,
+  compare: ComparisonOperator<T>,
 ): number {
   const pivot = items[Math.floor((left + right) / 2)];
 
   while (left < right) {
-    while (operator(items[left], pivot) < 0) {
+    while (compare(items[left], pivot) < 0) {
       left++;
     }
     // now, there are `items[left] >= pivot` and `items[left-1] < pivot`
 
-    while (operator(pivot, items[right]) < 0) {
+    while (compare(pivot, items[right]) < 0) {
       right--;
     }
     // now
@@ -43,7 +43,7 @@ function partition<T>(
     //   when this turn completing, the loop will be over.
 
     if (left < right) {
-      if (operator(items[left], items[right]) > 0) {
+      if (compare(items[left], items[right]) > 0) {
         swap(items, left, right);
       }
       left++;
@@ -57,7 +57,7 @@ function partition<T>(
       // now, there are `items[left-1] <= pivot` and `items[left+1] >= pivot`,
       // but we can't judge items[left] is <, = or > pivot.
       // if (items[left] <= pivot), we put it in the left part, otherwise the right part.
-      return operator(items[left], pivot) <= 0 ? left : left - 1;
+      return compare(items[left], pivot) <= 0 ? left : left - 1;
     }
   }
 
@@ -66,19 +66,19 @@ function partition<T>(
   return right;
 }
 
-function sort<T>(items: T[], left: number, right: number, isInOrder: ComparisonOperator<T>): T[] {
+function sort<T>(items: T[], left: number, right: number, compare: ComparisonOperator<T>): T[] {
   if (left < right) {
-    const endIndexOfLeftPart = partition(items, left, right, isInOrder);
+    const endIndexOfLeftPart = partition(items, left, right, compare);
     if (left < endIndexOfLeftPart) {
-      sort(items, left, endIndexOfLeftPart, isInOrder);
+      sort(items, left, endIndexOfLeftPart, compare);
     }
     if (endIndexOfLeftPart < right) {
-      sort(items, endIndexOfLeftPart + 1, right, isInOrder);
+      sort(items, endIndexOfLeftPart + 1, right, compare);
     }
   }
   return items;
 }
 
-export default function quickSort<T>(items: T[], isInOrder: ComparisonOperator<T>): T[] {
-  return sort(items, 0, items.length - 1, isInOrder);
+export default function quickSort<T>(items: T[], compare: ComparisonOperator<T>): T[] {
+  return sort(items, 0, items.length - 1, compare);
 }
