@@ -14,6 +14,10 @@ export default class Stack<T> {
     return this.store.pop();
   }
 
+  peek(): T | undefined {
+    return this.store[this.size() - 1];
+  }
+
   clear(): Stack<T> {
     this.store = [];
     return this;
