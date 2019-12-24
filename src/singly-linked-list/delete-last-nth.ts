@@ -1,5 +1,5 @@
 import ListNode from './list-node';
-import findLastNth from './find-last-nth-of-no-sentry-list';
+import findLastNth from './find-last-nth';
 
 export default function deleteLastNth<T>(head: ListNode<T>, n: number): ListNode<T> | null {
   if (n <= 0) {

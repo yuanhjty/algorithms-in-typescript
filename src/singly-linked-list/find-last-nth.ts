@@ -5,21 +5,22 @@ export default function findLastNth<T>(head: ListNode<T>, n: number): ListNode<T
     return null;
   }
 
-  let first: ListNode<T> | null = head;
-  let second: ListNode<T> | null = head;
+  let ahead: ListNode<T> | null = head;
+  let behind: ListNode<T> | null = head;
 
-  for (let i = 0; first && i < n; i++) {
-    first = first.next;
+  let i = 0;
+  for (; ahead && i < n; i++) {
+    ahead = ahead.next;
   }
 
-  if (!first) {
-    return null;
+  if (!ahead) {
+    return i === n ? head : null;
   }
 
-  while (first) {
-    first = first.next;
-    second = (second as ListNode<T>).next;
+  while (ahead) {
+    ahead = ahead.next;
+    behind = (behind as ListNode<T>).next;
   }
 
-  return second;
+  return behind;
 }
