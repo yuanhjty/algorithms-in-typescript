@@ -63,13 +63,9 @@ function partition<T>(
 
 function sort<T>(items: T[], left: number, right: number, compare: ComparisonOperator<T>): T[] {
   if (left < right) {
-    const endIndexOfLeftPart = partition(items, left, right, compare);
-    if (left < endIndexOfLeftPart) {
-      sort(items, left, endIndexOfLeftPart, compare);
-    }
-    if (endIndexOfLeftPart < right) {
-      sort(items, endIndexOfLeftPart + 1, right, compare);
-    }
+    const leftEnd = partition(items, left, right, compare);
+    sort(items, left, leftEnd, compare);
+    sort(items, leftEnd + 1, right, compare);
   }
   return items;
 }

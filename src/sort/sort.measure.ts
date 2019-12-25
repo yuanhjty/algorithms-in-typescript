@@ -36,3 +36,8 @@ measureSort(mergeSort, 1000, 1000);
 measureSort(bubbleSort, 1000, 1000);
 measureSort(insertSort, 1000, 1000);
 measureSort(selectSort, 1000, 1000);
+
+console.log('---');
+measureSort(quickSortV1, 1000, 3000);
+measureSort(quickSortV2, 1000, 3000);
+measureSort(mergeSort, 1000, 3000);
