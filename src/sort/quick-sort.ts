@@ -1,11 +1,6 @@
 /* eslint-disable no-param-reassign, no-plusplus */
 import { ComparisonOperator } from './types';
-
-function swap<T>(items: T[], firstIndex: number, secondIndex: number): void {
-  const tmp = items[firstIndex];
-  items[firstIndex] = items[secondIndex];
-  items[secondIndex] = tmp;
-}
+import swap from './swap';
 
 /**
  * Pick an item from items as a pivot, divide items into two parts to make
