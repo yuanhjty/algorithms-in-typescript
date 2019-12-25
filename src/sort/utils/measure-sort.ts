@@ -9,7 +9,7 @@ export default function measureSort(
   listCount?: number,
 ): number {
   listSize = listSize || 2000;
-  listCount = listCount || 2000;
+  listCount = listCount || 1000;
   const lists = [];
   for (let i = 0; i < listCount; i++) {
     lists.push(getRandomList(listSize));
