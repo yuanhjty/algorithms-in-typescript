@@ -1,4 +1,4 @@
 import insertSort from './insert-sort';
-import testSort from './utils/test-sort';
+import runTest from './shared/test-runner';
 
-testSort(insertSort);
+runTest(insertSort);

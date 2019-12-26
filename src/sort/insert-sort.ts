@@ -1,6 +1,6 @@
-import { ComparisonOperator } from './types';
+import { Compare } from '../shared/types';
 
-export default function insertSort<T>(items: T[], compare: ComparisonOperator<T>): T[] {
+export default function insertSort<T>(items: T[], compare: Compare<T>): T[] {
   for (let i = 1, len = items.length; i < len; i++) {
     const valueToInsert = items[i];
     for (let j = i - 1; j >= 0; j--) {

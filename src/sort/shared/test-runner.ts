@@ -1,12 +1,9 @@
-import { Sort } from '../types';
 import isOrdered from '../is-ordered';
-import getRandomList from './random-list';
+import { Sort } from '../../shared/types';
+import getRandomList from '../../shared/random-list';
+import compareNumber from '../../shared/compare-number';
 
-function operator(a: number, b: number): number {
-  return a - b;
-}
-
-export default function testSort(sort: Sort<number>): void {
+export default function runTest(sort: Sort<number>): void {
   describe('quickSort', () => {
     const lists = [
       [],
@@ -27,7 +24,7 @@ export default function testSort(sort: Sort<number>): void {
 
     lists.forEach((l, i) => {
       test(`sort list #${i + 1}, list size: ${l.length}`, () => {
-        expect(isOrdered(sort(l, operator), operator)).toBeTruthy();
+        expect(isOrdered(sort(l, compareNumber), compareNumber)).toBeTruthy();
       });
     });
 
@@ -38,7 +35,7 @@ export default function testSort(sort: Sort<number>): void {
 
     randomLists.forEach((l, i) => {
       test(`sort random list #${i + 1}, list size: ${l.length}`, () => {
-        expect(isOrdered(sort(l, operator), operator)).toBeTruthy();
+        expect(isOrdered(sort(l, compareNumber), compareNumber)).toBeTruthy();
       });
     });
   });

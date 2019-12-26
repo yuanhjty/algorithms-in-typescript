@@ -1,7 +1,7 @@
-import { ComparisonOperator } from './types';
-import swap from './swap';
+import { Compare } from '../shared/types';
+import swap from '../shared/swap';
 
-export default function bubbleSort<T>(items: T[], compare: ComparisonOperator<T>): T[] {
+export default function bubbleSort<T>(items: T[], compare: Compare<T>): T[] {
   for (let end = items.length - 1; end > 0; end--) {
     let sorted = true;
     for (let i = 0; i < end; i++) {

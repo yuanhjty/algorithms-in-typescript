@@ -1,4 +1,4 @@
 import quickSort from './quick-sort-v2';
-import testSort from './utils/test-sort';
+import runTest from './shared/test-runner';
 
-testSort(quickSort);
+runTest(quickSort);

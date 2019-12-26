@@ -1,4 +1,4 @@
 import selectSort from './select-sort';
-import testSort from './utils/test-sort';
+import runTest from './shared/test-runner';
 
-testSort(selectSort);
+runTest(selectSort);

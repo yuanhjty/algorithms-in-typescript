@@ -1,4 +1,4 @@
 import bubbleSort from './bubble-sort';
-import testSort from './utils/test-sort';
+import runTest from './shared/test-runner';
 
-testSort(bubbleSort);
+runTest(bubbleSort);

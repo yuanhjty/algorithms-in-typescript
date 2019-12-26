@@ -1,4 +1,4 @@
 import mergeSort from './merge-sort';
-import testSort from './utils/test-sort';
+import runTest from './shared/test-runner';
 
-testSort(mergeSort);
+runTest(mergeSort);

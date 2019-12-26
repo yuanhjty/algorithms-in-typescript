@@ -1,13 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable no-param-reassign */
-import { Sort } from '../types';
-import getRandomList from './random-list';
+import { Sort } from '../../shared/types';
+import getRandomList from '../../shared/random-list';
 
-export default function measureSort(
-  sort: Sort<number>,
-  listSize?: number,
-  listCount?: number,
-): number {
+export default function measure(sort: Sort<number>, listSize?: number, listCount?: number): number {
   listSize = listSize || 2000;
   listCount = listCount || 1000;
   const lists = [];

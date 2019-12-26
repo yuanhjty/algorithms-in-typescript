@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign, no-plusplus */
-import { ComparisonOperator } from './types';
-import swap from './swap';
+import { Compare } from '../shared/types';
+import swap from '../shared/swap';
 
 /**
  * Pick an item from items as a pivot, divide items into two parts to make
@@ -8,12 +8,7 @@ import swap from './swap';
  * in the right part is greater than or equal to the pivot.
  * @returns endIndexOfLeftPart [number]
  */
-function partition<T>(
-  items: T[],
-  left: number,
-  right: number,
-  compare: ComparisonOperator<T>,
-): number {
+function partition<T>(items: T[], left: number, right: number, compare: Compare<T>): number {
   const pivot = items[Math.floor((left + right) / 2)];
 
   while (left < right) {
@@ -61,7 +56,7 @@ function partition<T>(
   return right;
 }
 
-function sort<T>(items: T[], left: number, right: number, compare: ComparisonOperator<T>): T[] {
+function sort<T>(items: T[], left: number, right: number, compare: Compare<T>): T[] {
   if (left < right) {
     const leftEnd = partition(items, left, right, compare);
     sort(items, left, leftEnd, compare);
@@ -70,6 +65,6 @@ function sort<T>(items: T[], left: number, right: number, compare: ComparisonOpe
   return items;
 }
 
-export default function quickSort<T>(items: T[], compare: ComparisonOperator<T>): T[] {
+export default function quickSort<T>(items: T[], compare: Compare<T>): T[] {
   return sort(items, 0, items.length - 1, compare);
 }
