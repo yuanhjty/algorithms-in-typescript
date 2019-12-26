@@ -5,7 +5,11 @@ import quickSort from './quick-sort-v2';
 /**
  * Applicable conditions: items can be divided into several buckets evenly.
  */
-export default function bucketSort(items: number[], bucketSize: number = 1000): number[] {
+export default function bucketSort(
+  items: number[],
+  bucketSize: number = 1000,
+  sort = quickSort,
+): number[] {
   const itemsCount = items.length;
   const bucketsCount = Math.ceil(itemsCount / bucketSize);
   const buckets = new Array(bucketsCount);
@@ -17,7 +21,7 @@ export default function bucketSort(items: number[], bucketSize: number = 1000): 
 
   let i = 0;
   buckets.forEach(bucket => {
-    quickSort(bucket.items, compareNumber);
+    sort(bucket.items, compareNumber);
     bucket.items.forEach((item: number) => {
       items[i++] = item;
     });
