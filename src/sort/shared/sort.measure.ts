@@ -4,6 +4,7 @@ import mergeSort from '../merge-sort';
 import bubbleSort from '../bubble-sort';
 import insertSort from '../insert-sort';
 import selectSort from '../select-sort';
+import bucketSort from '../bucket-sort';
 import measure from './measure';
 
 measure(quickSortV1, 100, 1000);
@@ -41,3 +42,6 @@ console.log('---');
 measure(quickSortV1, 1000, 3000);
 measure(quickSortV2, 1000, 3000);
 measure(mergeSort, 1000, 3000);
+
+const curryBucketSort = (items: number[]): number[] => bucketSort(items, 100);
+measure(curryBucketSort, 1000, 3000);
