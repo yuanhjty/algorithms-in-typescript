@@ -4,7 +4,7 @@ import getRandomList from '../../shared/random-list';
 import compareNumber from '../../shared/compare-number';
 
 export default function runTest(sort: Sort<number>): void {
-  describe('quickSort', () => {
+  describe(sort.name, () => {
     const lists = [
       [],
       [1],
