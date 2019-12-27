@@ -6,11 +6,7 @@ import bucketSort from './bucket-sort';
 describe('bucketSort', () => {
   for (let i = 0; i < 50; i++) {
     test(`#${i + 1}`, () => {
-      const list = getRandomList(1000);
-      list[list.length - 1] = 2;
-      list[list.length] = 1;
-      expect(isOrdered(list, compareNumber)).toBeFalsy();
-      expect(isOrdered(bucketSort(list, 100), compareNumber)).toBeTruthy();
+      expect(isOrdered(bucketSort(getRandomList(1000), 100), compareNumber)).toBeTruthy();
     });
   }
 });
