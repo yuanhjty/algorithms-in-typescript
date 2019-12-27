@@ -1,6 +1,7 @@
 /* eslint-disable no-plusplus */
 export default function countingSort(items: number[]): number[] {
-  if (items.length === 0) {
+  const size = items.length;
+  if (size === 0) {
     return items;
   }
 
@@ -20,7 +21,6 @@ export default function countingSort(items: number[]): number[] {
   max -= min;
 
   // normalize items to range [0, max]
-  const size = items.length;
   for (let i = 0; i < size; i++) {
     items[i] -= min;
   }
