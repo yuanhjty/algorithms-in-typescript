@@ -5,7 +5,7 @@ import countingSort from './counting-sort';
 
 runnerTest(countingSort);
 
-describe('test', () => {
+describe('countingSort debug test', () => {
   test('test', () => {
     expect(isSorted(countingSort([4, 3]), compareNumber)).toBeTruthy();
   });
