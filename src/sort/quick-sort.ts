@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign, no-plusplus */
 import { Compare } from '../shared/types';
 import swap from '../shared/swap';
 

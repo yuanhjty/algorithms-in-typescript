@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 import compareNumber from '../shared/compare-number';
 import quickSort from './quick-sort-v2';
 

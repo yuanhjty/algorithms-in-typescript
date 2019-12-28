@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 export default function countingSort(items: number[]): number[] {
   const size = items.length;
   if (size === 0) {

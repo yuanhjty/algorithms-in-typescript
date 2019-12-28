@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-param-reassign */
 import { Sort } from '../../shared/types';
 import getRandomList from '../../shared/random-list';
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 export default class Queue<T> {
   private store: T[];
   private head: number;

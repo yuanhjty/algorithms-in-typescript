@@ -1,4 +1,3 @@
-/* eslint-disable no-plusplus */
 function getRightKthDigit(n: number, k: number): number {
   return Math.floor((n % 10 ** k) / 10 ** (k - 1));
 }

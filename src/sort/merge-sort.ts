@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-plusplus */
 import { Compare } from '../shared/types';
 
 function merge<T>(
