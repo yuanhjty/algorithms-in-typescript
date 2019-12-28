@@ -8,14 +8,14 @@ function partition<T>(items: T[], left: number, right: number, compare: Compare<
   const middleValue = items[middle];
   let pivot = middleValue;
 
-  if (pivot < leftValue && pivot < rightValue) {
-    if (leftValue < rightValue) {
+  if (compare(pivot, leftValue) < 0 && compare(pivot, rightValue) < 0) {
+    if (compare(leftValue, rightValue) < 0) {
       pivot = leftValue;
     } else {
       pivot = rightValue;
     }
-  } else if (pivot > items[left] && pivot > items[right]) {
-    if (leftValue < rightValue) {
+  } else if (compare(pivot, leftValue) > 0 && compare(pivot, rightValue) > 0) {
+    if (compare(leftValue, rightValue) < 0) {
       pivot = rightValue;
     } else {
       pivot = leftValue;
