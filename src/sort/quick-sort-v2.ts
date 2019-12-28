@@ -2,7 +2,32 @@ import { Compare } from '../shared/types';
 import swap from '../shared/swap';
 
 function partition<T>(items: T[], left: number, right: number, compare: Compare<T>): number {
-  const pivot = items[right];
+  const middle = Math.floor((left + right) / 2);
+  const leftValue = items[left];
+  const rightValue = items[right];
+  const middleValue = items[middle];
+  let pivot = middleValue;
+
+  if (pivot < leftValue && pivot < rightValue) {
+    if (leftValue < rightValue) {
+      pivot = leftValue;
+    } else {
+      pivot = rightValue;
+    }
+  } else if (pivot > items[left] && pivot > items[right]) {
+    if (leftValue < rightValue) {
+      pivot = rightValue;
+    } else {
+      pivot = leftValue;
+    }
+  }
+
+  if (pivot === middleValue) {
+    swap(items, middle, right);
+  } else if (pivot === leftValue) {
+    swap(items, left, right);
+  }
+
   let i = left;
   for (let j = left; j < right; j++) {
     if (compare(items[j], pivot) < 0) {
