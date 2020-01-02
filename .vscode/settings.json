@@ -4,5 +4,6 @@
     "javascript": "node",
     "typescript": "cd $workspaceRoot && ./node_modules/.bin/ts-node $fullFileName"
   },
-  "code-runner.runInTerminal": true
+  "code-runner.runInTerminal": true,
+  "cSpell.words": ["bsearch"]
 }
