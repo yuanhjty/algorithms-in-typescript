@@ -1,4 +1,4 @@
-export default function sqrt(n: number, fractionDigits: number = 6): number {
+export default function bsearchSqrt(n: number, fractionDigits: number = 6): number {
   if (n < 0) {
     throw new Error(`cannot calculate square root of a negative number: ${n}`);
   }
