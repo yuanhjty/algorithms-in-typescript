@@ -1,6 +1,6 @@
-export default function bsearch<T>(items: T[], target: T): number {
-  let low = 0;
-  let high = items.length - 1;
+export default function bsearch<T>(items: T[], target: T, start?: number, end?: number): number {
+  let low = !start || !Number.isInteger(start) || start < 0 ? 0 : start;
+  let high = !end || !Number.isInteger(end) || end > items.length - 1 ? items.length - 1 : end;
 
   while (low <= high) {
     const mid = low + Math.floor((high - low) / 2);

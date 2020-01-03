@@ -22,4 +22,12 @@ describe('bsearch', () => {
       expect(bsearch(items, item)).toBe(index);
     });
   });
+
+  test('customize start and end', () => {
+    expect(bsearch(items, 0, 1)).toBe(-1);
+    expect(bsearch(items, 5, 0, 2)).toBe(-1);
+    expect(bsearch(items, 5, 1)).toBe(5);
+    expect(bsearch(items, 5, -1, 30)).toBe(5);
+    expect(bsearch(items, 5, 0.1, 0.2)).toBe(5);
+  });
 });
