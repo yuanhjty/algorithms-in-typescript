@@ -6,10 +6,10 @@
     "lint": "eslint ./ --ext .ts,.js",
     "lint-fix": "eslint ./ --fix --ext .ts,.js",
     "lint-staged": "lint-staged",
-    "tsc": "tsc",
     "prettier": "prettier --write \"**/*.{js,ts,json}\"",
-    "test": "npm run lint-fix && npm run tsc && jest",
-    "compile": "babel ./src --out-dir ./build --extensions .ts,.js",
+    "test": "npm run lint-fix && jest",
+    "jest": "jest",
+    "compile": "tsc",
     "build": "npm run test && npm run compile"
   },
   "lint-staged": {
@@ -36,14 +36,9 @@
   "author": "yuanhjty",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
     "@types/jest": "^24.0.23",
     "@typescript-eslint/eslint-plugin": "^2.9.0",
     "@typescript-eslint/parser": "^2.9.0",
-    "babel-jest": "^24.9.0",
     "eslint": "^6.7.1",
     "eslint-config-prettier": "^6.8.0",
     "eslint-config-y-base": "^4.1.0",
@@ -54,6 +49,7 @@
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "prettier-config-y-base": "^2.0.0",
+    "ts-jest": "^24.3.0",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.2"
   }

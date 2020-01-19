@@ -2,14 +2,11 @@ import ListNode from '../singly-linked-list/list-node';
 import findPrev from '../singly-linked-list/find-prev';
 
 export default class Stack<T> {
-  private store: ListNode<T>;
-  private tail: ListNode<T>;
-  private length: number;
+  private store: ListNode<T> = new ListNode(null as never);
+  private tail: ListNode<T> = this.store;
+  private length: number = 0;
 
   constructor(values?: T[]) {
-    this.store = new ListNode(null as never);
-    this.tail = this.store;
-    this.length = 0;
     (values || []).forEach(value => {
       this.push(value);
     });

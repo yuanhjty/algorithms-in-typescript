@@ -1,12 +1,10 @@
 export default class Queue<T> {
   private store: T[];
-  private head: number;
-  private tail: number;
+  private head: number = 0;
+  private tail: number = 0;
 
   constructor(size: number) {
     this.store = new Array<T>(size);
-    this.head = 0;
-    this.tail = 0;
   }
 
   capacity(): number {

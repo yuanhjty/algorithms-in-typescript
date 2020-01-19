@@ -1,13 +1,8 @@
 import ListNode from '../singly-linked-list/list-node';
 
 export default class Queue<T> {
-  private head: ListNode<T | null>;
-  private tail: ListNode<T | null>;
-
-  constructor() {
-    this.head = new ListNode(null);
-    this.tail = this.head;
-  }
+  private head: ListNode<T | null> = new ListNode(null);
+  private tail: ListNode<T | null> = this.head;
 
   isEmpty(): boolean {
     return this.head === this.tail;
