@@ -3,8 +3,8 @@ export default class CircularQueue<T> {
   private head: number = 0;
   private tail: number = 0;
 
-  constructor(size: number) {
-    this.store = new Array<T>(size + 1);
+  constructor(capacity: number) {
+    this.store = new Array<T>(capacity + 1);
   }
 
   private forward(cursor: number): number {

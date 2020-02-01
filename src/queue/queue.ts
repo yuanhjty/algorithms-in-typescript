@@ -3,8 +3,8 @@ export default class Queue<T> {
   private head: number = 0;
   private tail: number = 0;
 
-  constructor(size: number) {
-    this.store = new Array<T>(size);
+  constructor(capacity: number) {
+    this.store = new Array<T>(capacity);
   }
 
   capacity(): number {
