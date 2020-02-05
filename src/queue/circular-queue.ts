@@ -7,7 +7,7 @@ export default class CircularQueue<T> {
     this.store = new Array<T>(capacity + 1);
   }
 
-  private forward(cursor: number): number {
+  private stepForward(cursor: number): number {
     return (cursor + 1) % this.store.length;
   }
 
@@ -25,7 +25,7 @@ export default class CircularQueue<T> {
   }
 
   isFull(): boolean {
-    return this.forward(this.tail) === this.head;
+    return this.stepForward(this.tail) === this.head;
   }
 
   enqueue(item: T): boolean {
@@ -33,7 +33,7 @@ export default class CircularQueue<T> {
       return false;
     }
     this.store[this.tail] = item;
-    this.tail = this.forward(this.tail);
+    this.tail = this.stepForward(this.tail);
     return true;
   }
 
@@ -42,7 +42,7 @@ export default class CircularQueue<T> {
       return null;
     }
     const item = this.store[this.head];
-    this.head = this.forward(this.head);
+    this.head = this.stepForward(this.head);
     return item;
   }
 }
